@@ -12,12 +12,12 @@ Aplicar el patrón de arquitectura MVVM (Model – View – ViewModel) en una ap
 
 El proyecto fue desarrollado utilizando:
 
-1        Patrón MVVM
-2        Separación por capas inspirada en Clean Architecture
-3        Repository Pattern
-4        Use Cases
-5        Gestión de estado con LiveData
-6        Persistencia simple con SharedPreferences
+-      Patrón MVVM
+-        Separación por capas inspirada en Clean Architecture
+-        Repository Pattern
+-        Use Cases
+-        Gestión de estado con LiveData
+-        Persistencia simple con SharedPreferences
 
 🏗️ Estructura del proyecto
 
