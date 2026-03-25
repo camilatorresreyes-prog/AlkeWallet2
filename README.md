@@ -41,6 +41,23 @@ WalletRepository
 -  MainActivity (Login)
 -  WalletActivity
 
+<img width="2457" height="1226" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/0ae8dea1-a843-4193-8ef6-98a9009d8b27" />
+
+<La aplicación inicia en `MainActivity`, donde el usuario realiza el inicio de sesión.  
+Luego accede a `WalletActivity`, que corresponde a la vista principal de la billetera.
+
+La lógica de negocio se maneja en `WalletViewModel`, que se comunica con los casos de uso:
+- `GetSaldoUseCase`
+- `DepositarUseCase`
+- `RetirarUseCase`
+
+Estos casos de uso interactúan con `WalletRepository`, que centraliza el acceso a los datos del modelo `Wallet`.
+
+El `ViewModel` expone el estado mediante `LiveData`, permitiendo que la vista observe cambios en el saldo y en los mensajes mostrados al usuario.
+
+Finalmente, se utiliza `SharedPreferences` para mantener el saldo guardado entre sesiones.>
+
+
 ⚙️ Funcionalidades implementadas
 
 La aplicación permite:
@@ -113,3 +130,8 @@ La implementación, desarrollo y comprensión del proyecto fueron realizados por
 👩‍💻 Autora
 
 Camila Torres Reyes
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/f50b3988-2589-484b-bb4e-2abca605a30c" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9fda53ec-e165-426b-b59e-6622e6f07104" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b4d9a1b6-9822-4e1d-994e-476d8a0dd325" />
+
