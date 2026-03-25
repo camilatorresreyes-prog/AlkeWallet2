@@ -1,64 +1,50 @@
-AlkeWallet
+📱 AlkeWallet2
 
-Aplicación Android desarrollada como proyecto académico para el Módulo 5 del Bootcamp de Desarrollo Android.
+Aplicación móvil Android desarrollada como proyecto académico del Módulo 5, cuyo objetivo es simular el funcionamiento básico de una billetera digital.
 
-La aplicación simula una billetera virtual que permite al usuario iniciar sesión y gestionar su saldo mediante operaciones básicas de depósito y retiro.
+Permite al usuario iniciar sesión y gestionar su saldo mediante operaciones simples de depósito y retiro de dinero.
 
-🎯 Objetivo del proyecto
+  👩‍💻 Autora
 
-Aplicar el patrón de arquitectura MVVM (Model – View – ViewModel) en una aplicación Android funcional, utilizando buenas prácticas de organización del código y separación de responsabilidades.
+Camila Torres Reyes
 
-🧠 Arquitectura implementada
+Proyecto desarrollado como parte del proceso de formación en desarrollo de aplicaciones móviles Android.
 
-El proyecto fue desarrollado utilizando:
+  🎯 Objetivo del proyecto
 
--      Patrón MVVM
--        Separación por capas inspirada en Clean Architecture
--        Repository Pattern
--        Use Cases
--        Gestión de estado con LiveData
--        Persistencia simple con SharedPreferences
+Aplicar el patrón de arquitectura MVVM (Model – View – ViewModel) en una aplicación Android funcional, incorporando buenas prácticas de organización del código y separación de responsabilidades.
 
-🏗️ Estructura del proyecto
+  🧠 Arquitectura implementada
 
-El proyecto se organiza de la siguiente manera:
+El proyecto utiliza el patrón:
 
-📦 data
-WalletRepository
+MVVM (Model - View - ViewModel)
 
-📦 domain.usecase
+Esto permite:
+
+*  Separar la lógica de negocio de la interfaz
+*  Facilitar mantenimiento del código
+*  Mejorar escalabilidad del proyecto
+
+  🏗️ Estructura del proyecto
+
+El proyecto se organiza en las siguientes capas:
+
+📦 Model
+-  Wallet.kt → Representa la billetera y su saldo
+📦 ViewModel
+-  WalletViewModel.kt → Maneja la lógica de negocio y estado de la aplicación
+📦 View (UI)
+-  MainActivity → Pantalla de inicio de sesión
+-  WalletActivity → Pantalla principal de la billetera
+📦 Domain (UseCases)
 -  DepositarUseCase
 -  RetirarUseCase
 -  GetSaldoUseCase
+📦 Data
+-  WalletRepository → Manejo y persistencia de datos
 
-📦 model
--  Wallet
-
-📦 viewmodel
--  WalletViewModel
-
-📦 ui
--  MainActivity (Login)
--  WalletActivity
-
-<img width="2457" height="1226" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/0ae8dea1-a843-4193-8ef6-98a9009d8b27" />
-
-<La aplicación inicia en `MainActivity`, donde el usuario realiza el inicio de sesión.  
-Luego accede a `WalletActivity`, que corresponde a la vista principal de la billetera.
-
-La lógica de negocio se maneja en `WalletViewModel`, que se comunica con los casos de uso:
-- `GetSaldoUseCase`
-- `DepositarUseCase`
-- `RetirarUseCase`
-
-Estos casos de uso interactúan con `WalletRepository`, que centraliza el acceso a los datos del modelo `Wallet`.
-
-El `ViewModel` expone el estado mediante `LiveData`, permitiendo que la vista observe cambios en el saldo y en los mensajes mostrados al usuario.
-
-Finalmente, se utiliza `SharedPreferences` para mantener el saldo guardado entre sesiones.>
-
-
-⚙️ Funcionalidades implementadas
+  ⚙️ Funcionalidades implementadas
 
 La aplicación permite:
 
@@ -66,73 +52,63 @@ La aplicación permite:
 *  Visualización del saldo
 *  Depósito de dinero
 *  Retiro de dinero
-*  Persistencia del saldo entre sesiones
-*  Observación de cambios mediante LiveData
-*  Separación de lógica mediante UseCases y Repository
+*  Persistencia del saldo mediante SharedPreferences
+*  Registro simple de transacciones
+*  Observación del estado mediante LiveData
 
-🔄 Flujo de la aplicación.
+  🔄 Flujo de la aplicación
+1.  El usuario ingresa correo y contraseña.
+2.  Accede a la pantalla Wallet.
+3.  Puede visualizar su saldo actual.
+4.  Puede realizar depósitos o retiros.
+5.  El saldo queda almacenado para futuras sesiones.
 
-1  El usuario inicia sesión desde la pantalla principal.
-2  Accede a la pantalla Wallet.
-3  Puede visualizar su saldo actual.
-4  Puede realizar depósitos o retiros.
-5  El saldo queda almacenado para futuras ejecuciones.
-
-💾 Persistencia de datos
+  💾 Persistencia de datos
 
 Se utiliza:
 
 SharedPreferences
 
-Para almacenar el saldo del usuario de forma local y mantener el estado de la aplicación.
+Para guardar el saldo del usuario de forma local y mantener el estado de la aplicación entre ejecuciones.
 
-🎨 Interfaz de usuario
+  📊 Diagrama de arquitectura
 
-La interfaz mantiene coherencia visual con el proyecto del módulo anterior:
+<img width="400" height="1120" alt="mermaid-diagram (1)" 
+  src="https://github.com/user-attachments/assets/9fd304dd-84ae-4466-962c-790f7ed4763e" />
 
--  Pantalla de Login
+  🛠 Tecnologías utilizadas
+*  Kotlin
+*  Android Studio
+*  Arquitectura MVVM
+*  LiveData
+*  ViewModel
+*  SharedPreferences
+*  XML Layouts
+
+  📸 Capturas de la aplicación
+-  Pantalla Login
 -  Pantalla Wallet
--  Componentes visuales simples y funcionales
+-  Depósito
+-  Retiro
 
-🛠️ Tecnologías utilizadas
 
--  Kotlin
--  Android Studio
--  MVVM
--  ViewModel
--  LiveData
--  SharedPreferences
--  Material Design básico
+📚 Referencias bibliográficas
+*  Alkemy. Patrones de arquitectura en Android - Parte III. Material del módulo 5.
+*  Alkemy. Patrones de arquitectura en Android - Parte IV. Material del módulo 5.
+*  Android Developers. Guide to App Architecture. https://developer.android.com/topic/architecture
+*  Android Developers. ViewModel. https://developer.android.com/topic/libraries/architecture/viewmodel
+*  Android Developers. LiveData. https://developer.android.com/topic/libraries/architecture/livedata
+*  Android Developers. SharedPreferences. https://developer.android.com/training/data-storage/shared-preferences
+*  Kotlin Documentation. https://kotlinlang.org/docs/home.html
 
-📚 Contexto académico
 
-Este proyecto fue desarrollado con fines educativos como parte del proceso de aprendizaje en desarrollo de aplicaciones móviles Android.
-
-🤖 Uso de herramientas de Inteligencia Artificial
+🤖 Uso de Inteligencia Artificial
 
 Durante el desarrollo del proyecto se utilizaron herramientas de inteligencia artificial como apoyo para:
 
--  Comprensión de conceptos de arquitectura Android
--  Resolución de errores técnicos
+-  Comprensión de conceptos
+-  Resolución de errores
 -  Organización del código
--  Orientación conceptual
+-  Orientación sobre arquitectura MVVM
 
-La implementación, desarrollo y comprensión del proyecto fueron realizados por la estudiante.
-
-📖 Referencias bibliográficas
-
--  Material de clases Bootcamp Android — Módulo 5
--  Android Developers. ViewModel overview
--  Android Developers. LiveData overview
--  Android Developers. Guide to app architecture
--  Android Developers. SharedPreferences documentation
-
-👩‍💻 Autora
-
-Camila Torres Reyes
-
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/f50b3988-2589-484b-bb4e-2abca605a30c" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9fda53ec-e165-426b-b59e-6622e6f07104" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2af4217e-9918-4b4f-b0cb-b9057c6a57ba" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b4d9a1b6-9822-4e1d-994e-476d8a0dd325" />
-
+La implementación y comprensión del proyecto fue realizada por la autora.
