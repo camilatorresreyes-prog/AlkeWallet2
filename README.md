@@ -133,5 +133,6 @@ Camila Torres Reyes
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/f50b3988-2589-484b-bb4e-2abca605a30c" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9fda53ec-e165-426b-b59e-6622e6f07104" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2af4217e-9918-4b4f-b0cb-b9057c6a57ba" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b4d9a1b6-9822-4e1d-994e-476d8a0dd325" />
 
