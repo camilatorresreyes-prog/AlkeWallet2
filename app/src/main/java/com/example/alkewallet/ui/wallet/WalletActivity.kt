@@ -36,7 +36,7 @@ class WalletActivity : AppCompatActivity() {
         tvMovimientos = findViewById(R.id.tvMovimientos)
 
         val prefs = getSharedPreferences("wallet", MODE_PRIVATE)
-        val saldoGuardado = prefs.getInt("saldo", 100000)
+        val saldoGuardado = prefs.getInt("saldo", 0)
         viewModel.saldo.value = saldoGuardado
 
         viewModel.saldo.observe(this) { saldoActual ->
